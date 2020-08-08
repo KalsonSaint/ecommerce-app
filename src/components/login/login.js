@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import FormInput from "../form-input/form-input";
 import "./login.scss";
 
 class Login extends Component {
@@ -15,30 +16,36 @@ class Login extends Component {
     this.setState({ email: "", password: "" });
   };
 
-  handleChange = e => {
-      const {value, name} = e.target;
-      this.setState({[name]: value})
-  }
+  handleChange = (e) => {
+    const { value, name } = e.target;
+    this.setState({ [name]: value });
+  };
 
   render() {
     return (
-      <div className="login">
-        <h2>I already have an account</h2>
-        <span>Sign in with your email and password</span>
-        <form onSubmit={this.handleSubmit}>
-          <input type="email" name="email" value={this.state.email} required />
-          <label>Email</label>
-          <input
-            type="password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            required
-          />
-          <label>Password</label>
-          <input type="submit" value="Submit Form" />
-        </form>
-      </div>
+        <div className="login">
+            <h2>I already have an account</h2>
+            <span>Sign in with your email and password</span>
+            <form onSubmit={this.handleSubmit}>
+            <FormInput
+                name="email"
+                type="email"
+                handleChange={this.handleChange}
+                value={this.state.email}
+                label="email"
+                required
+            />
+            <FormInput
+                name="password"
+                type="password"
+                value={this.state.password}
+                handleChange={this.handleChange}
+                label="password"
+                required
+            />
+            {/* <CustomButton type="submit"> Sign in </CustomButton> */}
+            </form>
+        </div>
     );
   }
 }

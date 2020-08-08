@@ -1,7 +1,5 @@
 import React from 'react'
-
 import './login-register.scss'
-
 import Login from '../../components/login/login'
 
 const LoginRegister = () => {
@@ -10,6 +8,6 @@ const LoginRegister = () => {
             <Login />
         </div>
     )
-}
+};
 
 export default LoginRegister 
