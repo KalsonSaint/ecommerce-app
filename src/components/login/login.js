@@ -17,7 +17,12 @@ class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({ email: "", password: "" });
+    this.setState(
+      { 
+        email: "", 
+        password: "" 
+      }
+    );
   };
 
   handleChange = (e) => {
