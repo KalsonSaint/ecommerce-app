@@ -17,12 +17,10 @@ class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.setState(
-      { 
-        email: "", 
-        password: "" 
-      }
-    );
+    this.setState({
+      email: "",
+      password: "",
+    });
   };
 
   handleChange = (e) => {
@@ -31,6 +29,7 @@ class Login extends Component {
   };
 
   render() {
+    const { email, password } = this.state;
     return (
       <div className="login">
         <h2>I already have an account</h2>
@@ -40,14 +39,14 @@ class Login extends Component {
             name="email"
             type="email"
             handleChange={this.handleChange}
-            value={this.state.email}
+            value={email}
             label="email"
             required
           />
           <FormInput
             name="password"
             type="password"
-            value={this.state.password}
+            value={password}
             handleChange={this.handleChange}
             label="password"
             required
